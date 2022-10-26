@@ -1,0 +1,11 @@
+{
+    "development":{
+        "user": "postgres", 
+        "password": "1506",
+        "host": "localhost", 
+        "database": "cruddb", 
+        "port": 5432 
+    },
+    "test": {},
+    "production": {}
+}
