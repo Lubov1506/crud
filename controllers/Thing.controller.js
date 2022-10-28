@@ -12,3 +12,31 @@ module.exports.createThing = async (req, res, next) => {
     next(err);
   }
 };
+
+module.exports.getAllThings = async (req, res, next) => {
+  try {
+    const arrayAllThins = await Thing.finfAll()
+    if(arrayAllThins.length){
+      return res.status(200).send({data: arrayAllThins})
+    }
+    res.status(204).send()
+  } catch (err) {
+    next(err);
+  }
+};
+module.exports.getOneThing = async (req, res, next) => {
+  try {
+    const {params:id} = req
+    const [oneThing] = await Thing.findByPK(id)
+    if(oneThing){
+      return res.status(200).send({data: arrayAllThins})
+    }
+    res.status(204).send()
+  } catch (err) {
+    next(err);
+  }
+};
+
+module.exports.updateOneThing = async (req, res, next) => {}
+
+module.exports.deleteOneThing = async (req, res, next) => {}
